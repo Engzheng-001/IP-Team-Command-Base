@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>IP Team · Command Base</title>
+<style>
+:root{ --bg:#0D1117; --s1:#161B22; --s2:#21262D; --s3:#2D333B; --border:#30363D; --text:#E6EDF3; --muted:#7D8590; --dim:#484F58; --accent:#58A6FF; --ok:#3FB950; --warn:#E3B341; --bad:#FF7B72; --info:#2F81F7; --fh:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI','PingFang SC','Noto Sans SC',sans-serif; --fb:var(--fh); --fm:'SF Mono',ui-monospace,'JetBrains Mono',monospace; --r:10px; --r-sm:7px; }
+body.mode-light{ --bg:#FBFAF6; --s1:#FFFFFF; --s2:#F2F0E9; --s3:#E9E6DC; --border:#D2CCBD; --text:#1E3A42; --muted:#6C6E6F; --dim:#A9A294; --accent:#005678; --ok:#2E8B6B; --warn:#B5852E; --bad:#CF4F52; --info:#5D98AE; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+body.mode-warm{ --bg:#F5F0E8; --s1:#FBF7EF; --s2:#EFE7D8; --s3:#E6DAC6; --border:#DDCFB8; --text:#4A3D2E; --muted:#8B7355; --dim:#B0A187; --accent:#005678; --ok:#5E7E4F; --warn:#C2902E; --bad:#B5605A; --info:#8B7355; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:13.5px;line-height:1.55;padding:0 0 60px;transition:background .25s,color .25s}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}
+.topbar{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.topbar .wrap{display:flex;align-items:center;gap:10px;padding-top:9px;padding-bottom:9px}
+.topbar a.home{font-family:var(--fm);font-size:10.5px;font-weight:700;color:var(--accent);border:1px solid var(--border);border-radius:16px;padding:4px 11px;white-space:nowrap}
+.topbar .crumb{color:var(--muted);font-family:var(--fm);font-size:10.5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-width:0}
+.topbar .crumb b{color:var(--text);font-weight:600}
+.modebar{margin-left:auto;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;flex-shrink:0}
+.modebar button{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.3px;border:none;background:transparent;color:var(--muted);padding:5px 11px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+@media(max-width:560px){.topbar .crumb{display:none}}
+.hdr{padding:30px 0 6px}
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--fh);font-size:30px;font-weight:800;letter-spacing:-.5px;margin-top:6px}
+.meta{font-family:var(--fm);font-size:11px;color:var(--muted);margin-top:8px}
+.sec-t{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:10px;margin:30px 0 14px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.stat{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:13px 12px;text-align:center}
+.stat .n{font-family:var(--fm);font-size:25px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:9.5px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+.stat.good .n{color:var(--ok)} .stat.alert .n{color:var(--bad)}
+.nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tile{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:22px 20px;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;gap:8px;min-height:150px}
+.tile:hover{border-color:var(--accent);transform:translateY(-2px)}
+.tile .ico{font-size:26px;line-height:1}
+.tile .tt{font-family:var(--fh);font-weight:800;font-size:17px;color:var(--text)}
+.tile .td{font-size:12px;color:var(--muted);line-height:1.5}
+.tile .go{margin-top:auto;font-family:var(--fm);font-size:10px;color:var(--accent);letter-spacing:.5px}
+.quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px}
+.qcard{background:var(--s1);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 13px;font-size:12.5px;display:flex;align-items:center;gap:8px;transition:border-color .15s}
+.qcard:hover{border-color:var(--accent)}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0}
+.note{margin-top:24px;padding:13px 15px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);font-size:11px;color:var(--muted);line-height:1.7}
+.note b{color:var(--text)}
+.pagefoot{margin-top:30px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--fm);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}.nav-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="index.html">⌂ Home</a>
+  <span class="crumb"><b>Command Base</b></span>
+  <div class="modebar" id="modebar">
+    <button data-m="dark" class="on">◐ Dark</button>
+    <button data-m="light">○ Light</button>
+    <button data-m="warm">◑ Warm</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="eyebrow">IP Team · Kaloz Production</div>
+    <h1>Command Base</h1>
+    <div class="meta">一个地方看齐 team 的 workflow · morning brief · tracker · projects · Celine / Eng Zheng / Chevonne</div>
+  </div>
+
+  <div class="sec-t">At a glance</div>
+  <div class="stats">
+    <div class="stat"><div class="n">4</div><div class="l">Projects</div></div>
+    <div class="stat good"><div class="n">1</div><div class="l">Brief Today</div></div>
+    <div class="stat alert"><div class="n">3</div><div class="l">本周要紧</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Team</div></div>
+  </div>
+
+  <div class="sec-t">去哪里 · Sections</div>
+  <div class="nav-grid">
+    <a class="tile" href="morning-brief/index.html">
+      <span class="ico">☀️</span>
+      <div class="tt">Morning Brief</div>
+      <div class="td">每天的 brief — 按人、按 project 的当日任务。最新 07-14。</div>
+      <div class="go">OPEN ↗</div>
+    </a>
+    <a class="tile" href="trackers/index.html">
+      <span class="ico">📊</span>
+      <div class="tt">Tracker</div>
+      <div class="td">全 team project 状态一眼看完 · owner · 下一步 · due。</div>
+      <div class="go">OPEN ↗</div>
+    </a>
+    <a class="tile" href="projects/index.html">
+      <span class="ico">📁</span>
+      <div class="tt">Projects</div>
+      <div class="td">每个 project 一页 — overview · job scope · tracker。</div>
+      <div class="go">OPEN ↗</div>
+    </a>
+  </div>
+
+  <div class="sec-t">Quick links · 最近</div>
+  <div class="quick">
+    <a class="qcard" href="morning-brief/2026-07-14.html"><span class="dot" style="background:var(--ok)"></span>今日 Morning Brief · 07-14</a>
+    <a class="qcard" href="projects/inner-circle.html"><span class="dot" style="background:var(--bad)"></span>入局 Inner Circle · CI 未锁 🔴</a>
+    <a class="qcard" href="projects/npg-nan-2026.html"><span class="dot" style="background:var(--ok)"></span>NPG NAN 2026 · 后期剪辑中</a>
+    <a class="qcard" href="trackers/index.html"><span class="dot" style="background:var(--warn)"></span>本周要紧 · 3 项</a>
+  </div>
+
+  <div class="note"><b>这是 v1，从你 workspace 现有内容 compile 出来的。</b> 内容真身在 <code>_source/</code> 里的 MD（morning-brief / tracker / projects）——你改 MD，我 recompile 成这些 HTML。点上面 tile 进各区，每页左上 ⌂ Home 带你回来。右上角切 Dark / Light / Warm。</div>
+
+  <footer class="pagefoot">
+    <span class="cp">IP Team · Command Base</span>
+    <span class="upd">Compiled 2026-07-14</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('modebar');
+  function setMode(m){
+    document.body.classList.remove('mode-light','mode-warm');
+    if(m==='light')document.body.classList.add('mode-light');
+    if(m==='warm')document.body.classList.add('mode-warm');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});
+    try{localStorage.setItem('ipMode',m);}catch(e){}
+  }
+  bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});
+  var saved='dark';try{saved=localStorage.getItem('ipMode')||'dark';}catch(e){}
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

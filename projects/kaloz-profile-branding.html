@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Kaloz Profile & Branding · IP Team</title>
+<style>
+:root{ --bg:#0D1117; --s1:#161B22; --s2:#21262D; --s3:#2D333B; --border:#30363D; --text:#E6EDF3; --muted:#7D8590; --dim:#484F58; --accent:#58A6FF; --ok:#3FB950; --warn:#E3B341; --bad:#FF7B72; --info:#2F81F7; --fh:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI','PingFang SC','Noto Sans SC',sans-serif; --fb:var(--fh); --fm:'SF Mono',ui-monospace,'JetBrains Mono',monospace; --r:10px; --r-sm:7px; }
+body.mode-light{ --bg:#FBFAF6; --s1:#FFFFFF; --s2:#F2F0E9; --s3:#E9E6DC; --border:#D2CCBD; --text:#1E3A42; --muted:#6C6E6F; --dim:#A9A294; --accent:#005678; --ok:#2E8B6B; --warn:#B5852E; --bad:#CF4F52; --info:#5D98AE; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+body.mode-warm{ --bg:#F5F0E8; --s1:#FBF7EF; --s2:#EFE7D8; --s3:#E6DAC6; --border:#DDCFB8; --text:#4A3D2E; --muted:#8B7355; --dim:#B0A187; --accent:#005678; --ok:#5E7E4F; --warn:#C2902E; --bad:#B5605A; --info:#8B7355; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:13.5px;line-height:1.6;padding:0 0 60px;transition:background .25s,color .25s}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}
+.topbar{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.topbar .wrap{max-width:1000px;display:flex;align-items:center;gap:10px;padding-top:9px;padding-bottom:9px}
+.topbar a.home{font-family:var(--fm);font-size:10.5px;font-weight:700;color:var(--accent);border:1px solid var(--border);border-radius:16px;padding:4px 11px;white-space:nowrap}
+.topbar a.home:hover{border-color:var(--accent)}
+.topbar .crumb{color:var(--muted);font-family:var(--fm);font-size:10.5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-width:0}
+.topbar .crumb a{color:var(--muted)} .topbar .crumb a:hover{color:var(--accent)}
+.topbar .crumb b{color:var(--text);font-weight:600}
+.modebar{margin-left:auto;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;flex-shrink:0}
+.modebar button{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.3px;border:none;background:transparent;color:var(--muted);padding:5px 11px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.hdr{padding:24px 0 6px}
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--fh);font-size:25px;font-weight:800;letter-spacing:-.4px;margin-top:6px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.badge.info{color:var(--info);border-color:var(--info)}
+.sec-t{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:10px;margin:28px 0 12px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
+.panel{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px}
+.panel h3{font-family:var(--fh);font-size:14px;margin:14px 0 6px}.panel h3:first-child{margin-top:0}
+.panel p{margin:6px 0}
+.todo{color:var(--dim);font-style:italic}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--s2);font-family:var(--fm);font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+tr:last-child td{border-bottom:none}
+.tbl-wrap{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.note{margin-top:22px;padding:13px 15px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);font-size:11px;color:var(--muted);line-height:1.7}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--fm);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:560px){.topbar .crumb{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="../index.html">⌂ Home</a>
+  <span class="crumb"><a href="../index.html">Command Base</a> › <a href="index.html">Projects</a> › <b>Kaloz Profile & Branding</b></span>
+  <div class="modebar" id="modebar">
+    <button data-m="dark" class="on">◐ Dark</button>
+    <button data-m="light">○ Light</button>
+    <button data-m="warm">◑ Warm</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="eyebrow">Project · Internal</div>
+    <h1>Kaloz Profile & Branding</h1>
+    <div class="badges"><span class="badge info">🔵 Planning</span><span class="badge">还没开工</span></div>
+  </div>
+
+  <div class="sec-t">① Overview</div>
+  <div class="panel">
+    <h3>What this is</h3>
+    <p class="todo">（placeholder — 等你补：Kaloz 自己的 company profile & branding project 是什么、要交付什么）</p>
+    <h3>Where we are (now)</h3>
+    <p>还没正式开工。</p>
+  </div>
+
+  <div class="sec-t">② Job Scope · 谁做什么</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Role</th><th>Who</th><th>负责</th></tr>
+    <tr><td>—</td><td>—</td><td class="todo">（待补）</td></tr>
+  </table></div>
+
+  <div class="sec-t">③ Tracker</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>#</th><th>Task</th><th>Owner</th><th>Status</th></tr>
+    <tr><td>1</td><td class="todo">（待补 — 还没开工）</td><td>—</td><td>⚪ todo</td></tr>
+  </table></div>
+
+  <div class="note"><b>真身：</b> <code>_source/projects/kaloz-profile-branding/</code>。这是个 placeholder project —— 你补 MD 后跟我说 recompile。</div>
+
+  <footer class="pagefoot">
+    <span class="cp">IP Team · Command Base</span>
+    <span class="upd">Compiled 2026-07-14</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('modebar');
+  function setMode(m){
+    document.body.classList.remove('mode-light','mode-warm');
+    if(m==='light')document.body.classList.add('mode-light');
+    if(m==='warm')document.body.classList.add('mode-warm');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});
+    try{localStorage.setItem('ipMode',m);}catch(e){}
+  }
+  bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});
+  var saved='dark';try{saved=localStorage.getItem('ipMode')||'dark';}catch(e){}
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

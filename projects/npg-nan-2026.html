@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>NPG NAN 2026 · IP Team</title>
+<style>
+:root{ --bg:#0D1117; --s1:#161B22; --s2:#21262D; --s3:#2D333B; --border:#30363D; --text:#E6EDF3; --muted:#7D8590; --dim:#484F58; --accent:#58A6FF; --ok:#3FB950; --warn:#E3B341; --bad:#FF7B72; --info:#2F81F7; --fh:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI','PingFang SC','Noto Sans SC',sans-serif; --fb:var(--fh); --fm:'SF Mono',ui-monospace,'JetBrains Mono',monospace; --r:10px; --r-sm:7px; }
+body.mode-light{ --bg:#FBFAF6; --s1:#FFFFFF; --s2:#F2F0E9; --s3:#E9E6DC; --border:#D2CCBD; --text:#1E3A42; --muted:#6C6E6F; --dim:#A9A294; --accent:#005678; --ok:#2E8B6B; --warn:#B5852E; --bad:#CF4F52; --info:#5D98AE; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+body.mode-warm{ --bg:#F5F0E8; --s1:#FBF7EF; --s2:#EFE7D8; --s3:#E6DAC6; --border:#DDCFB8; --text:#4A3D2E; --muted:#8B7355; --dim:#B0A187; --accent:#005678; --ok:#5E7E4F; --warn:#C2902E; --bad:#B5605A; --info:#8B7355; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:13.5px;line-height:1.6;padding:0 0 60px;transition:background .25s,color .25s}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}
+.topbar{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.topbar .wrap{max-width:1000px;display:flex;align-items:center;gap:10px;padding-top:9px;padding-bottom:9px}
+.topbar a.home{font-family:var(--fm);font-size:10.5px;font-weight:700;color:var(--accent);border:1px solid var(--border);border-radius:16px;padding:4px 11px;white-space:nowrap}
+.topbar a.home:hover{border-color:var(--accent)}
+.topbar .crumb{color:var(--muted);font-family:var(--fm);font-size:10.5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-width:0}
+.topbar .crumb a{color:var(--muted)} .topbar .crumb a:hover{color:var(--accent)}
+.topbar .crumb b{color:var(--text);font-weight:600}
+.modebar{margin-left:auto;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;flex-shrink:0}
+.modebar button{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.3px;border:none;background:transparent;color:var(--muted);padding:5px 11px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.hdr{padding:24px 0 6px}
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--fh);font-size:25px;font-weight:800;letter-spacing:-.4px;margin-top:6px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.badge.ok{color:var(--ok);border-color:var(--ok)} .badge.bad{color:var(--bad);border-color:var(--bad)} .badge.info{color:var(--info);border-color:var(--info)}
+.sec-t{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:10px;margin:28px 0 12px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
+.panel{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px}
+.panel h3{font-family:var(--fh);font-size:14px;margin:14px 0 6px}.panel h3:first-child{margin-top:0}
+.panel p{margin:6px 0}
+.panel ul{margin:6px 0 6px 18px}.panel li{margin:3px 0}
+.panel b{color:var(--text)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:12.5px;margin:8px 0}
+.kv .k{color:var(--muted);font-family:var(--fm);font-size:11px}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--s2);font-family:var(--fm);font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+tr:last-child td{border-bottom:none}
+.tbl-wrap{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.note{margin-top:22px;padding:13px 15px;background:var(--s1);border:1px solid var(--border);border-radius:var(--r);font-size:11px;color:var(--muted);line-height:1.7}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--fm);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:560px){.topbar .crumb{display:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="../index.html">⌂ Home</a>
+  <span class="crumb"><a href="../index.html">Command Base</a> › <a href="index.html">Projects</a> › <b>NPG NAN 2026</b></span>
+  <div class="modebar" id="modebar">
+    <button data-m="dark" class="on">◐ Dark</button>
+    <button data-m="light">○ Light</button>
+    <button data-m="warm">◑ Warm</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="eyebrow">Project · Client (NPG)</div>
+    <h1>NPG NAN 2026</h1>
+    <div class="badges"><span class="badge ok">🟢 Active</span><span class="badge">Owner · Zheng</span><span class="badge">Event 7/12/2026</span></div>
+  </div>
+
+  <div class="sec-t">① Overview</div>
+  <div class="panel">
+    <h3>What this is</h3>
+    <p>Kaloz 为 <b>NPG 20 周年年会（NPG Awards Night 2026 / "NAN 2026"）</b> 制作的 event-coverage reels。范围 = 9 支 reels：内容锁定 → proposal deck 给 NPG 过目 → event 拍摄 → 剪辑交付。</p>
+    <h3>Event facts</h3>
+    <div class="kv">
+      <span class="k">日期</span><span>7/12/2026 · Majestic Hotel · 主题 <b>Gold & Glam</b></span>
+      <span class="k">Client</span><span>NPG Agency · Organizer Eventtoz</span>
+      <span class="k">NPG</span><span>Norman Pang（创办人/主席）· Danny Goh（CEO）· Andy Chin（COO）</span>
+      <span class="k">演出</span><span>曹格 (Gary Chao) · Partner = Allianz（C-level 到场）</span>
+      <span class="k">大奖</span><span>17 连冠 Champion + ASEAN Record</span>
+    </div>
+    <h3>Where we are (now)</h3>
+    <p>Event 已过（7/12）。进入<b>后期剪辑 + 交付</b>：Editor YiJie 在剪 Gary × Norman + 两大奖项的 Norman 专访；其余 video 陆续 brief 给 editor 出。活动照片修图 + 现场 video 整理后 send client。</p>
+    <h3>Watch-outs</h3>
+    <ul><li>Reel 素材要跟 NPG admin 要历年 old footage（大奖 / milestone reel 会用到）</li><li>Invoice detail 要 send client</li></ul>
+  </div>
+
+  <div class="sec-t">② Job Scope · 谁做什么</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Role</th><th>Who</th><th>负责</th></tr>
+    <tr><td>Owner / Lead</td><td>Zheng</td><td>Reels 内容 owner、整体 creative</td></tr>
+    <tr><td>Coordination</td><td>Celine</td><td>跟 Carmen 对出片顺序、brief editor、照片修图、client 交付、invoice</td></tr>
+    <tr><td>Editor</td><td>YiJie</td><td>剪 Gary×Norman + 两大奖 Norman 专访 + 其余 reels</td></tr>
+    <tr><td>拍摄 / 剪辑</td><td>Kaloz team</td><td>Event 拍摄 + 后期</td></tr>
+    <tr><td>Reviewer</td><td>老板（内部）</td><td>待确认</td></tr>
+    <tr><td>Approver</td><td>NPG（client）</td><td>Proposal / 交付 sign-off — 待确认</td></tr>
+  </table></div>
+
+  <div class="sec-t">③ Tracker</div>
+  <div class="tbl-wrap"><table>
+    <tr><th>#</th><th>Task</th><th>Owner</th><th>Status</th></tr>
+    <tr><td>1</td><td>9 支 reels 内容锁定（objective + 问题）</td><td>Zheng</td><td>🟢 done</td></tr>
+    <tr><td>2</td><td>Proposal deck（Canva PPT 米色+蓝金 / HTML）</td><td>Zheng</td><td>🟢 done</td></tr>
+    <tr><td>3</td><td>Event 拍摄（7/12）</td><td>Kaloz 拍摄</td><td>🟢 done</td></tr>
+    <tr><td>4</td><td>剪 Gary × Norman + 两大奖 Norman 专访</td><td>YiJie</td><td>🟡 doing</td></tr>
+    <tr><td>5</td><td>跟 Carmen 确认哪条 video 先出</td><td>Celine</td><td>🟡 doing</td></tr>
+    <tr><td>6</td><td>其余 video brief 给 editor</td><td>Zheng + Celine</td><td>🟡 doing</td></tr>
+    <tr><td>7</td><td>活动照片修图 → send client</td><td>Celine</td><td>⚪ todo</td></tr>
+    <tr><td>8</td><td>现场播放 video 整理 → send client</td><td>Celine</td><td>⚪ todo</td></tr>
+    <tr><td>9</td><td>Send invoice detail 给 client</td><td>Celine</td><td>⚪ todo</td></tr>
+  </table></div>
+
+  <div class="note"><b>真身：</b> <code>_source/projects/npg-nan-2026/</code> 的 <code>overview.md</code> · <code>job-scope.md</code> · <code>tracker.md</code>。改 MD → recompile → 这页更新。</div>
+
+  <footer class="pagefoot">
+    <span class="cp">IP Team · Command Base</span>
+    <span class="upd">Compiled 2026-07-14</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('modebar');
+  function setMode(m){
+    document.body.classList.remove('mode-light','mode-warm');
+    if(m==='light')document.body.classList.add('mode-light');
+    if(m==='warm')document.body.classList.add('mode-warm');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});
+    try{localStorage.setItem('ipMode',m);}catch(e){}
+  }
+  bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});
+  var saved='dark';try{saved=localStorage.getItem('ipMode')||'dark';}catch(e){}
+  setMode(saved);
+})();
+</script>
+</body>
+</html>
