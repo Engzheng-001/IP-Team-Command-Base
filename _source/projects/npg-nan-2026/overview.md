@@ -13,8 +13,8 @@ Kaloz 为 **NPG 20 周年年会（NPG Awards Night 2026 / "NAN 2026"）** 制作
 - 两大 record 奖：17 连冠 Champion + ASEAN Record
 
 ## Where we are (now)
-Event 已过（7/12）。进入 **后期剪辑 + 交付**：Editor YiJie 在剪 Gary × Norman + 两大奖项的 Norman 专访；其余 video 陆续 brief 给 editor 出。活动照片修图 + 现场 video 整理后 send client。
+Event 已过（7/12）。进入 **后期剪辑 + 交付**：第 1 支 Gary × Norman 已剪好，client preview 过、OK 继续；Editor YiJie 现在剪第 4 支两大奖项 Norman 专访。活动照片（Jeff + Zeekr）已修图（去 flare）+ send client ✅；现场播放 video 整理后 send client。
 
 ## Watch-outs
 - Reel 素材要跟 NPG admin 要历年 old footage（大奖 / milestone reel 会用到）
-- Invoice detail 要 send client
+- Invoice detail 已 send crew，client 端还没发

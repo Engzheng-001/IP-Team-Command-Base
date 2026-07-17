@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>入局 · 参考节目 Research · IP Team</title>
+<style>
+:root{ --bg:#0D1117; --s1:#161B22; --s2:#21262D; --s3:#2D333B; --border:#30363D; --text:#E6EDF3; --muted:#7D8590; --dim:#484F58; --accent:#58A6FF; --ok:#3FB950; --warn:#E3B341; --bad:#FF7B72; --info:#2F81F7; --fh:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI','PingFang SC','Noto Sans SC',sans-serif; --fb:var(--fh); --fm:'SF Mono',ui-monospace,'JetBrains Mono',monospace; --r:10px; --r-sm:7px; }
+body.mode-light{ --bg:#FBFAF6; --s1:#FFFFFF; --s2:#F2F0E9; --s3:#E9E6DC; --border:#D2CCBD; --text:#1E3A42; --muted:#6C6E6F; --dim:#A9A294; --accent:#005678; --ok:#2E8B6B; --warn:#B5852E; --bad:#CF4F52; --info:#5D98AE; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+body.mode-warm{ --bg:#F5F0E8; --s1:#FBF7EF; --s2:#EFE7D8; --s3:#E6DAC6; --border:#DDCFB8; --text:#4A3D2E; --muted:#8B7355; --dim:#B0A187; --accent:#005678; --ok:#5E7E4F; --warn:#C2902E; --bad:#B5605A; --info:#8B7355; --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:13.5px;line-height:1.6;padding:0 0 60px;transition:background .25s,color .25s}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}
+.topbar{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.topbar .wrap{max-width:1000px;display:flex;align-items:center;gap:10px;padding-top:9px;padding-bottom:9px}
+.topbar a.home{font-family:var(--fm);font-size:10.5px;font-weight:700;color:var(--accent);border:1px solid var(--border);border-radius:16px;padding:4px 11px;white-space:nowrap}
+.topbar a.home:hover{border-color:var(--accent)}
+.topbar .crumb{color:var(--muted);font-family:var(--fm);font-size:10.5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-width:0}
+.topbar .crumb a{color:var(--muted)} .topbar .crumb a:hover{color:var(--accent)}
+.topbar .crumb b{color:var(--text);font-weight:600}
+.modebar{margin-left:auto;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;flex-shrink:0}
+.modebar button{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.3px;border:none;background:transparent;color:var(--muted);padding:5px 11px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.hdr{padding:24px 0 6px}
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--fh);font-size:25px;font-weight:800;letter-spacing:-.4px;margin-top:6px}
+.sub{color:var(--muted);font-size:13px;margin-top:8px}
+.meta{font-family:var(--fm);font-size:11px;color:var(--muted);margin-top:8px}
+.sec-t{font-family:var(--fm);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:10px;margin:28px 0 12px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-t .k{color:var(--text)}
+.howto{border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--r-sm);padding:12px 15px;background:var(--s1);font-size:12.5px;line-height:1.7;margin-top:6px}
+.howto b{color:var(--text)}
+.tldr{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:6px 18px 14px}
+.tldr .row{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:12.5px;line-height:1.6}
+.tldr .row:last-child{border-bottom:none}
+.tldr .n{font-family:var(--fm);font-weight:800;color:var(--accent)}
+.tldr b{color:var(--text)}
+.cat{font-family:var(--fh);font-size:15px;font-weight:800;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+.showcard{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:10px}
+.showcard.core{border-left:3px solid var(--accent)}
+.showcard.warnc{border-left:3px solid var(--warn)}
+.sc-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sc-name{font-family:var(--fh);font-weight:800;font-size:15px}
+.tag{font-family:var(--fm);font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;border:1px solid var(--border);color:var(--muted);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.tag.core{color:var(--accent);border-color:var(--accent)}
+.tag.warnt{color:var(--warn);border-color:var(--warn)}
+.sc-meta{font-family:var(--fm);font-size:10.5px;color:var(--muted);margin-top:4px}
+.sc-one{font-size:13px;color:var(--text);margin-top:8px;font-weight:600}
+.sc-dims{margin-top:10px;display:grid;gap:5px}
+.sc-dims .d{display:grid;grid-template-columns:92px 1fr;gap:10px;font-size:12px;align-items:start}
+.sc-dims .dl{font-family:var(--fm);font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);padding-top:2px}
+.sc-dims .dv{color:var(--text);line-height:1.5}
+.sc-dims .dv .flag{color:var(--bad);font-weight:600}
+.sc-take{margin-top:10px;padding:8px 11px;background:var(--s2);border-radius:var(--r-sm);font-size:12px;line-height:1.5}
+.sc-take b{color:var(--accent)}
+.sc-foot{margin-top:9px;font-family:var(--fm);font-size:9.5px;color:var(--dim);letter-spacing:.3px}
+.foots{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;font-size:12px;line-height:1.8}
+.foots b{color:var(--text)}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--s2);font-family:var(--fm);font-size:9.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+tr:last-child td{border-bottom:none}
+.tbl-wrap{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.tmpl{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;font-family:var(--fm);font-size:11px;line-height:1.7;color:var(--text);white-space:pre-wrap;overflow-x:auto}
+.rules{font-size:11.5px;color:var(--muted);margin-top:10px;line-height:1.7}
+.rules b{color:var(--text)}
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--fm);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .upd{margin-left:auto;color:var(--dim)}
+@media(max-width:560px){.topbar .crumb{display:none}.sc-dims .d{grid-template-columns:1fr;gap:1px}.sc-dims .dl{padding-top:6px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="../index.html">⌂ Home</a>
+  <span class="crumb"><a href="inner-circle.html">入局 Inner Circle</a> › <b>参考节目 Research</b></span>
+  <div class="modebar" id="modebar">
+    <button data-m="dark" class="on">◐ Dark</button>
+    <button data-m="light">○ Light</button>
+    <button data-m="warm">◑ Warm</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="hdr">
+    <div class="eyebrow">入局 Inner Circle · Team Research</div>
+    <h1>参考节目库</h1>
+    <div class="sub">《入局》所有参考节目的一页总览 — 国际 + 中国 + 马来西亚本地。团队共同维护。</div>
+    <div class="meta">维护: Zheng (AD) · 最后更新 2026-07-16 · 收录 11 档 + 4 注脚</div>
+  </div>
+
+  <div class="howto">
+    <b>怎么用这份 👇</b><br>
+    · <b>赶时间</b>：只看下面「5 条核心结论」就够。<br>
+    · <b>看某档节目</b>：往下翻，按 国际 / 中国 / 本地 分类。每档一张卡、格式一样。<br>
+    · <b>加你的 research（协作者）</b>：复制文末「加节目模板」，填好放进对应类别，<b>署上你的名字</b>。别改别人的卡；细节放你自己的文件，这里只放一句话级精华。
+  </div>
+
+  <div class="sec-t"><span class="k">5 条核心结论 · TL;DR</span></div>
+  <div class="tldr">
+    <div class="row"><span class="n">1</span><div><b>全球同源</b> — Shark Tank / Dragon's Den / 合伙中国人 / 投吧 全都源自日本《Money Tigers》。→ 可打「全球模式的大马华人篇」。</div></div>
+    <div class="row"><span class="n">2</span><div><b>「国际级」第一杠杆 = 钱是真的</b> — 国际版都没冠名，靠真钱真股权真风险建立可信度。logo 上谈判桌就掉价。</div></div>
+    <div class="row"><span class="n">3</span><div><b>中国经验</b> — 博弈紧张 + 一点殿堂分量；选人重镜头/金句力（《我是创始人》选人闷而崩）；真老板当评委；主动埋金句。</div></div>
+    <div class="row"><span class="n">4</span><div><b>本地洞察</b> — 华语 Shark-Tank 赛制型几乎是蓝海（本地只投吧）；银行冠名已验证（Affin/Alliance）；本地没人掏真股权 → <b>做真股权 = 差异化</b>。</div></div>
+    <div class="row"><span class="n">5</span><div><b>3 个待《入局》拍板</b> — ① 投资真钱还是象征 ② 赛制"搞定1位"vs"全或无" ③ 气质偏博弈紧张(B)还是殿堂权威(A)。</div></div>
+  </div>
+
+  <div class="sec-t"><span class="k">节目库</span></div>
+
+  <div class="cat">🌍 国际标杆</div>
+
+  <div class="showcard">
+    <div class="sc-h"><span class="sc-name">Shark Tank</span><span class="tag">国际 · 赛制</span></div>
+    <div class="sc-meta">美国 ABC · 2009–</div>
+    <div class="sc-one">投资路演的金标准，5 位"鲨鱼"当场用自己的钱买股权。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">无主持只旁白（评委即权威）· 5 鲨鱼轮换 · 走廊 + 一排王座</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">走廊入场 → "求 $X 换 Y%" → 质询估值 → 报价 → "I'm out"；搞定 1 位即成交</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">周五全美第一 · 5 座艾美奖</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">消费品为主 · 反差人设 · "the one that got away"</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">无冠名 · 真钱真股权 = 内容本身 · 全球模式授权</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 标准化「ASK」字幕包装 · 真股权 = 可信度 ·（入局已定有主持 Jeff，走"权威主持 + 大佬"而非无主持）</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: Wikipedia</div>
+  </div>
+
+  <div class="showcard">
+    <div class="sc-h"><span class="sc-name">Dragon's Den</span><span class="tag">国际 · 赛制</span></div>
+    <div class="sc-meta">英国 BBC / 加拿大 CBC · 2005–</div>
+    <div class="sc-one">同源更冷峻版，桌上堆真钞，"全或无"。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">5 条"龙" · 记者旁白 · 桌上钞票堆道具 · 拾级进"den"</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">"求 £X 换 Y%" → 盘问 → 全或无（拿满全额否则空手走）</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">升上 BBC One = 血统印章 · 记者主持显严肃</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">更多实体小企业 · 冷静 boardroom 调 · "vanishing deals"风险</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">BBC 执照费 = 零广告零赞助（最高级形态）</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 钞票堆道具设计大马版 · "全或无"更紧张 · 升频道 = 血统叙事</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: Wikipedia</div>
+  </div>
+
+  <div class="cat">🇨🇳 中国</div>
+
+  <div class="showcard">
+    <div class="sc-h"><span class="sc-name">合伙中国人</span><span class="tag">中国 · 赛制</span></div>
+    <div class="sc-meta">深圳卫视 · 2016 / 2017</div>
+    <div class="sc-one">中国版 Shark Tank，千亿身价大佬团当场抢投。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">6 人投资人轮换池 · 无主持 · 正版引进</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">「十分钟融资」路演 1–3min → 质询 → 抢投 / 集体拒绝两极 → 议价</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">"创投版《美国偶像》" · 四段式 slogan 圈四类人</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">真创业者生活化 · 争议人物情感张力 · 大佬花絮做切片</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">冠名点融网 / 雅堂小超（金主 = 创投品牌同频）· 真金白银</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 投资人天团强人设 · 核心机制起响名 · 实录狠剪只留两极</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: 百度百科 / 界面</div>
+  </div>
+
+  <div class="showcard core">
+    <div class="sc-h"><span class="sc-name">赢在中国</span><span class="tag core">中国 · 赛制 · 殿堂鼻祖</span></div>
+    <div class="sc-meta">CCTV / 江苏卫视 · 2006–</div>
+    <div class="sc-one">商战真人秀鼻祖，马云、柳传志当评委。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">主持王利芬 · 实业大佬 × 财务投资人两派对撞 · 108→36→12→5 晋级</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">BP 阐述 → 答辩 → 点评 → 投票；2013 版升级 24h 商战任务</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">slogan「励志照亮人生，创业改变命运」· 主题曲大佬联名作词</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">已成名企业家 · 校友叙事长尾招牌 · 金句 = 病毒资产</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">中国联通冠名 · 奖励 = 1000 万公司 CEO + 20–50% 股权</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 评委两派对撞 · 锁魂 slogan · 奖励 = 真投资 · 经营校友叙事</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: 百度百科 / 虎嗅</div>
+  </div>
+
+  <div class="showcard">
+    <div class="sc-h"><span class="sc-name">创业英雄汇</span><span class="tag">中国 · 赛制 · 央视克制</span></div>
+    <div class="sc-meta">CCTV 财经 · 2014–</div>
+    <div class="sc-one">央视"创业实战公开课"，克制权威。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">主持陈伟鸿 = 权威锚点 · ~30 职业投资人天团亮灯</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">5min 路演 → 亮灯 → 「100 秒快问快答」→ 意向融资额打屏</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">"公开课"双创国家叙事 · 累计约 31 亿意向额</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">硬科技 / 实体 · 全国海选 + 高校巡回 · 专业质疑非撕扯</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">邮储银行联办 · 平台型变现</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 权威主持定调（呼应 Jeff）·「100 秒问答 + 亮灯」直接抄 · 银行冠名</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: 央视 / 百度百科</div>
+  </div>
+
+  <div class="showcard">
+    <div class="sc-h"><span class="sc-name">天生我有才</span><span class="tag">中国 · 赛制 · 明星跨界</span></div>
+    <div class="sc-meta">浙江卫视 · 2015</div>
+    <div class="sc-one">首档明星跨界创投真人秀。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">明星合伙人（胡海泉 = 真天使投资人）· 背后一线 VC 机构</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">明星当伯乐挑 2 项目 → 下场体验 → 携团队面 5 大机构考核</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">明星流量 + 情感代入 · 踢馆 / 连胜机制</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">名人分工 = 伯乐 + 体验 + 竞争；真金白银由机构裁决</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">京东既是投资团又是冠名 = 以投资人身份植入（最高级）</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 若放名人照此分工（名人管流量、机构管钱）· 冠名商 = 场上资源方</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: 百度百科 / 知乎</div>
+  </div>
+
+  <div class="showcard warnc">
+    <div class="sc-h"><span class="sc-name">我是创始人</span><span class="tag warnt">中国 · 赛制 · ⚠️ 反面案例</span></div>
+    <div class="sc-meta">浙江卫视 · 2016</div>
+    <div class="sc-one">真 CEO 亲自下场竞技，叫好不叫座（豆瓣 7.8 但收视惨败）。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">董明珠 / 任泉 / 王小川等下场 · 无主持 · 收视对赌</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">保密任务（海底捞当服务员 / 街头卖货）→ 复盘 → 淘汰</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv"><span class="flag">⚠️ 放传统黄金档错配</span> → 教训 = 社媒优先做 KPI</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">反差去光环 · breakout IP 孙涛勇→微盟 · <span class="flag">⚠️ 选人重项目轻镜头 → 崩</span></span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv"><span class="flag">⚠️ 无强冠名 = 纯平台补贴</span>（败因之一）</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 选人镜头 / 金句力优先 · 每集倒推切片名场面 · 别只靠平台补贴</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: 界面 / 豆瓣</div>
+  </div>
+
+  <div class="cat">🇲🇾 马来西亚本地</div>
+
+  <div class="showcard core">
+    <div class="sc-h"><span class="sc-name">投吧！合伙人 (The Sandbox)</span><span class="tag core">本地 · 华语 · 赛制 · 核心</span></div>
+    <div class="sc-meta">Astro AEC × MyStartr · 2023 · 两季</div>
+    <div class="sc-one">全马首档中文众筹真人秀，几乎是《入局》的本地前身。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">主持 S1 小马 / S2 颜江瀚 · 3 大佬导师（Cuckoo / Tealive / Khind→CARSOME）· 周六黄金档</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">电梯路演 → 商业模式九宫格 → 众筹团队赛 → 决赛向 100 位公众投资人；S2 融资额游戏化</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">全马首档中文众筹真人秀 · 绑定股权众筹平台</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">项目超广接地气 · 用真老板当导师建可信度</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">冠名 Affin Bank · 与 MyStartr 变现绑定 · 旗舰战绩众筹近 RM1000 万</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 真老板 + 银行冠名 + 黄金档 = 已验证 · 绑定众筹后端 · 融资额游戏化</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: Astro 官方 / Vulcan Post</div>
+  </div>
+
+  <div class="showcard">
+    <div class="sc-h"><span class="sc-name">Biz Smart Challenge</span><span class="tag">本地 · 英语 · 银行赛制</span></div>
+    <div class="sc-meta">Alliance Bank × EcoWorld · 2018–</div>
+    <div class="sc-one">大马首个由金融机构做的商业真人秀。</div>
+    <div class="sc-dims">
+      <div class="d"><span class="dl">Framework</span><span class="dv">主持 Freda Liu · 导师 + 评审分层 · Astro Awani + AXN 双平台</span></div>
+      <div class="d"><span class="dl">Flow</span><span class="dv">报名 → 20 强 → 商业培训 → 12 强 → 系列挑战 → 每周淘汰 → 直播决赛；「60 秒电梯演讲」</span></div>
+      <div class="d"><span class="dl">Positioning</span><span class="dv">首个金融机构真人秀 · 明打 drama / 淘汰当卖点</span></div>
+      <div class="d"><span class="dl">Content</span><span class="dv">成长期 SME 消费品牌 · 校友榜 = 最强资产（Christy Ng / BloomThis / Amazin' Graze）</span></div>
+      <div class="d"><span class="dl">Sponsor</span><span class="dv">奖励 = 现金 + 银行融资额度（非股权）· 近年转 iQIYI 纪录片</span></div>
+    </div>
+    <div class="sc-take"><b>⭐ 对《入局》</b> 三层角色分工 · 60 秒高压环节 · 校友追踪机制 ·（做真股权 = 对它的差异化）</div>
+    <div class="sc-foot">Researcher: Zheng · 2026-07 · Source: says.com / Vulcan Post</div>
+  </div>
+
+  <div class="foots">
+    <b>本地注脚</b>（不深挖，作全景补全）<br>
+    · <b>The Firm</b>（2007 · ntv7 · 英语 · Apprentice 式 · 已停）— 评委 Tengku Zafrul 后来当财政部长。<br>
+    · <b>INNOVATHON</b>（Astro + 科技部 · 创新真人秀 · 服务型投资 RM100 万）— 偏科技 / 政府。<br>
+    · <b>The Apprentice Asia</b>（2013 · AXN · Tony Fernandes 当老板）— 区域，非纯本地。<br>
+    · <b>Amber Leong</b> — 第一位上美版 Shark Tank 的大马人，拿下 US$80 万 deal。
+  </div>
+
+  <div class="sec-t"><span class="k">协作分工 · 谁在研究什么</span></div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Researcher</th><th>负责范围</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>Zheng (AD)</td><td>国际标杆 + 中国 + 马来西亚本地</td><td>✅ 已完成（11 档）</td></tr>
+        <tr><td><i>（待认领）</i></td><td><i>区域（印尼/泰国）？综艺包装案例？舞美 / LED 案例？</i></td><td>⬜</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-t"><span class="k">加节目模板 · 复制这段</span></div>
+  <div class="tmpl">节目名  [类别 · 类型]
+· 平台/年份：
+· 一句话：
+· Framework：
+· Flow：
+· Positioning：
+· Content：
+· Sponsor：
+· ⭐ 对《入局》：
+· Researcher：你的名字 · 日期  |  Source：链接</div>
+  <div class="rules">
+    <b>规则</b> ① 每档一句话级，别灌长文（细节放你自己的详细文件）② 一定填 Researcher + Source ③ 别改别人的卡，只加自己的。
+  </div>
+
+  <footer class="pagefoot">
+    <span>入局 Inner Circle · 参考节目库</span>
+    <span class="upd">Last updated 2026-07-16</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('modebar');
+  function setMode(m){
+    document.body.classList.remove('mode-light','mode-warm');
+    if(m==='light')document.body.classList.add('mode-light');
+    if(m==='warm')document.body.classList.add('mode-warm');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});
+    try{localStorage.setItem('raeMode',m);}catch(e){}
+  }
+  bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});
+  var saved='dark';try{saved=localStorage.getItem('raeMode')||'dark';}catch(e){}
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

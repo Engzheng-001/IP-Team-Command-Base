@@ -5,12 +5,12 @@
 
 | Project | Status | Lead | Next / who has the ball | Due |
 |---|---|---|---|---|
-| Inner Circle | 🔴 blocked | Zheng | 先锁 CI color + logo system（P1 第一张多米诺，卡住所有下游） | 7/1 promo 硬节点 |
-| NPG NAN 2026 | 🟢 on track | Zheng | Editor 剪 Gary×Norman + 两大奖专访；video 陆续 brief 给 editor 出 | rolling |
-| Coffee Portrait Story | 🔵 planning | Celine | 跑 research 找方向；等下次 discussion 再继续 | — |
+| Inner Circle | 🟡 watch | Zheng | Local show research 已 done → 定 framework structure + 锁 CI 方向 | — |
+| NPG NAN 2026 | 🟢 on track | Zheng | 第一支（Norman×Gary）client preview OK；现在剪第四支（两大奖专访）+ video review/feedback | rolling |
+| Coffee Portrait Story | 🔵 planning | Celine | 访问对象 + 品牌故事 research 好了；11:30 creative discussion 定拍法 & execute | — |
 | Kaloz Profile & Branding | 🔵 planning | — | (待补 — 还没开工) | — |
 
 ## This week 要紧的
-- 🔴 **Inner Circle CI color** — 不锁，下面所有物料动不了
-- 🟡 **NPG NAN** — 跟 Carmen 确认哪条 video 先出 + 活动照片修图 send client
-- 🟡 **KARA** 项目收尾 + invoice（client + vendors）
+- 🟡 **Inner Circle** — research 完成，接下来定 framework structure + 锁 CI 方向（下游物料还在等）
+- 🟢 **NPG NAN** — 第一支 video client OK；剪第四支 + video review/feedback；照片已 send、invoice 已给 crew
+- 🟡 **Breakthrough** — Roundtable crew + 器材已 lock（24 / 27 / 9 月 18）；Breakthrough Live 等 Jiawei feedback

@@ -4,5 +4,5 @@
 
 | # | Task | Owner | Status |
 |---|---|---|---|
-| 1 | 跑 research，找方向 / ideas | Celine | 🟡 doing |
-| 2 | 下次 discussion 定方向 | Team | ⚪ todo |
+| 1 | 跑 research，找方向 / ideas（Milolo · Datuk Lee Seng Kiat） | Celine | 🟢 done |
+| 2 | Creative discussion —— 定拍法 & execute（今天 11:30） | Team | 🟡 doing |

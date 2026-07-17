@@ -6,4 +6,4 @@
 （待补 — 一句话讲清楚这个 project 是什么）
 
 ## Where we are (now)
-在跑 research 找方向 / ideas。目前 pending，等下次 discussion 再继续。
+Research 做完了 —— 访谈对象 + 品牌故事都研究好了（公司 **Milolo**，人物 **Datuk Lee Seng Kiat**）。下一步：定 creative —— 怎么拍 & 怎么执行。今天 11:30 有 discussion 锁 creative direction。
