@@ -59,11 +59,10 @@ h1 .date{color:var(--accent)}
 .who.celine{color:var(--p-celine)} .who.chevonne{color:var(--p-chevonne)} .who.ez{color:var(--p-ez)}
 .who .nm{color:var(--text)}
 .legend{font-family:var(--fm);font-size:10px;color:var(--muted);margin-top:11px;line-height:1.7}
-.ov-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-.ov-stat{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;text-align:center}
-.ov-stat .n{font-family:var(--fm);font-size:26px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
-.ov-stat .l{font-size:9.5px;color:var(--muted);margin-top:7px;text-transform:uppercase;letter-spacing:.5px}
-@media(max-width:640px){.ov-stats{grid-template-columns:repeat(2,1fr)}}
+.ovlist{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ovlist li{font-size:12px;line-height:1.5;color:var(--muted)}
+.ovlist li b{color:var(--text);font-weight:700}
+.pcard-name .own{font-size:11.5px}
 
 /* ===== PROJECT BLOCK ===== */
 .proj{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-top:16px}
@@ -164,13 +163,40 @@ h1 .date{color:var(--accent)}
     <div class="legend">每个人一个代表色 —— task 旁边的颜色 = 谁负责。<b style="color:var(--accent)">▸ Today</b> = 今天做；<b>▸ This Week</b> = 这周内。</div>
   </div>
 
-  <!-- ========== TASK OVERVIEW ========== -->
-  <div class="block-label" style="margin:20px 0 9px">Task Overview · Overall</div>
-  <div class="ov-stats">
-    <div class="ov-stat"><div class="n">28</div><div class="l">Total Tasks</div></div>
-    <div class="ov-stat"><div class="n" style="color:var(--p-celine)">21</div><div class="l">Celine</div></div>
-    <div class="ov-stat"><div class="n" style="color:var(--p-ez)">10</div><div class="l">Eng Zheng</div></div>
-    <div class="ov-stat"><div class="n" style="color:var(--p-chevonne)">8</div><div class="l">Chevonne</div></div>
+  <!-- ========== TASK OVERVIEW (by person, overall) ========== -->
+  <div class="block-label" style="margin:20px 0 9px">Task Overview · Overall — 28 total tasks</div>
+  <div class="persons">
+    <div class="pcard">
+      <div class="pcard-name"><span class="own celine">Celine · 21</span></div>
+      <ul class="ovlist">
+        <li><b>NAN</b> — invoice · vendor payment · feedback (All)</li>
+        <li><b>Inner Circle</b> — batch 1 comment · brief batch 2 · budget · Lark (All) · 21/7 agenda (All)</li>
+        <li><b>Coffee</b> — editor & timeline · agenda (All) · budget</li>
+        <li><b>Jynns</b> — editor & timeline · agenda (All) · quotation</li>
+        <li><b>ACP</b> — quotation · crew</li>
+        <li><b>Roundtable</b> — crew ✓ · equipment ✓</li>
+        <li><b>Others</b> — Proton feedback · Breakthrough Live · Proton vendor</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <div class="pcard-name"><span class="own ez">Eng Zheng · 10</span></div>
+      <ul class="ovlist">
+        <li><b>NAN</b> — feedback (All)</li>
+        <li><b>Inner Circle</b> — poster · promo VO · batch 1 comment · brief batch 2 · Lark (All) · 21/7 agenda (All)</li>
+        <li><b>Coffee</b> — agenda (All)</li>
+        <li><b>Jynns</b> — agenda (All)</li>
+        <li><b>Others</b> — S&amp;P Santan MV BTS</li>
+      </ul>
+    </div>
+    <div class="pcard">
+      <div class="pcard-name"><span class="own chevonne">Chevonne · 8</span></div>
+      <ul class="ovlist">
+        <li><b>NAN</b> — feedback (All)</li>
+        <li><b>Inner Circle</b> — research compilation · Lark (All) · 21/7 agenda (All)</li>
+        <li><b>Coffee</b> — find reference · agenda (All)</li>
+        <li><b>Jynns</b> — find reference · agenda (All)</li>
+      </ul>
+    </div>
   </div>
 
   <!-- ========== P1 · NAN 2026 ========== -->
