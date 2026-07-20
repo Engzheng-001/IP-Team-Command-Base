@@ -59,6 +59,11 @@ h1 .date{color:var(--accent)}
 .who.celine{color:var(--p-celine)} .who.chevonne{color:var(--p-chevonne)} .who.ez{color:var(--p-ez)}
 .who .nm{color:var(--text)}
 .legend{font-family:var(--fm);font-size:10px;color:var(--muted);margin-top:11px;line-height:1.7}
+.ov-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.ov-stat{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;text-align:center}
+.ov-stat .n{font-family:var(--fm);font-size:26px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.ov-stat .l{font-size:9.5px;color:var(--muted);margin-top:7px;text-transform:uppercase;letter-spacing:.5px}
+@media(max-width:640px){.ov-stats{grid-template-columns:repeat(2,1fr)}}
 
 /* ===== PROJECT BLOCK ===== */
 .proj{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-top:16px}
@@ -157,6 +162,15 @@ h1 .date{color:var(--accent)}
       <span class="who chevonne"><span class="ini">CH</span><span class="nm">Chevonne</span></span>
     </div>
     <div class="legend">每个人一个代表色 —— task 旁边的颜色 = 谁负责。<b style="color:var(--accent)">▸ Today</b> = 今天做；<b>▸ This Week</b> = 这周内。</div>
+  </div>
+
+  <!-- ========== TASK OVERVIEW ========== -->
+  <div class="block-label" style="margin:20px 0 9px">Task Overview · Overall</div>
+  <div class="ov-stats">
+    <div class="ov-stat"><div class="n">28</div><div class="l">Total Tasks</div></div>
+    <div class="ov-stat"><div class="n" style="color:var(--p-celine)">21</div><div class="l">Celine</div></div>
+    <div class="ov-stat"><div class="n" style="color:var(--p-ez)">10</div><div class="l">Eng Zheng</div></div>
+    <div class="ov-stat"><div class="n" style="color:var(--p-chevonne)">8</div><div class="l">Chevonne</div></div>
   </div>
 
   <!-- ========== P1 · NAN 2026 ========== -->
