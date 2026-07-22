@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Morning Brief · 2026-07-22</title>
+<style>
+/* ===== 3-MODE TOKENS ===== */
+:root{ /* ◐ DARK · Technical Command (default) */
+  --bg:#0D1117; --s1:#161B22; --s2:#21262D; --s3:#2D333B; --border:#30363D;
+  --text:#E6EDF3; --muted:#7D8590; --dim:#484F58; --accent:#58A6FF;
+  --ok:#3FB950; --warn:#E3B341; --bad:#FF7B72; --info:#2F81F7;
+  --p-celine:#3DD0E0; --p-chevonne:#C4A9F7; --p-ez:#5B8DF6;
+  --fh:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI','PingFang SC','Noto Sans SC',sans-serif;
+  --fb:var(--fh); --fm:'SF Mono',ui-monospace,'JetBrains Mono',monospace;
+  --r:10px; --r-sm:7px;
+}
+body.mode-light{ /* ○ LIGHT · Corporate */
+  --bg:#FBFAF6; --s1:#FFFFFF; --s2:#F2F0E9; --s3:#E9E6DC; --border:#D2CCBD;
+  --text:#1E3A42; --muted:#6C6E6F; --dim:#A9A294; --accent:#005678;
+  --ok:#2E8B6B; --warn:#B5852E; --bad:#CF4F52; --info:#5D98AE;
+  --p-celine:#0A8093; --p-chevonne:#6D46C0; --p-ez:#1D4ED8;
+  --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh);
+}
+body.mode-warm{ /* ◑ WARM · Editorial */
+  --bg:#F5F0E8; --s1:#FBF7EF; --s2:#EFE7D8; --s3:#E6DAC6; --border:#DDCFB8;
+  --text:#4A3D2E; --muted:#8B7355; --dim:#B0A187; --accent:#005678;
+  --ok:#5E7E4F; --warn:#C2902E; --bad:#B5605A; --info:#8B7355;
+  --p-celine:#0C7C8E; --p-chevonne:#6D46C0; --p-ez:#1F4FCC;
+  --fh:'Avenir Next','Avenir',Montserrat,'Helvetica Neue',-apple-system,'PingFang SC',sans-serif; --fb:var(--fh);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:13.5px;line-height:1.55;padding:0 0 60px;transition:background .25s,color .25s}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px}
+a{color:var(--accent);text-decoration:none}
+
+/* ===== TOPBAR ===== */
+.topbar{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.topbar .wrap{display:flex;align-items:center;gap:10px;padding-top:9px;padding-bottom:9px}
+.topbar .crumb{color:var(--muted);font-family:var(--fm);font-size:10.5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;min-width:0}
+.topbar .crumb b{color:var(--text);font-weight:600}
+.modebar{margin-left:auto;display:flex;gap:2px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:3px;flex-shrink:0}
+.modebar button{font-family:var(--fm);font-size:10px;font-weight:600;letter-spacing:.3px;border:none;background:transparent;color:var(--muted);padding:5px 11px;border-radius:16px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:var(--accent);color:#fff}
+.topbar a.home{font-family:var(--fm);font-size:10.5px;font-weight:700;color:var(--accent);border:1px solid var(--border);border-radius:16px;padding:4px 11px;white-space:nowrap}
+.topbar a.home:hover{border-color:var(--accent)}
+.topbar .crumb a{color:var(--muted)} .topbar .crumb a:hover{color:var(--accent)}
+
+/* ===== HEADER ===== */
+.brief-head{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;margin-top:22px}
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--fh);font-size:26px;font-weight:800;letter-spacing:-.4px;margin-top:6px}
+h1 .date{color:var(--accent)}
+.wkmeta{font-family:var(--fm);font-size:11px;color:var(--muted);margin-top:6px}
+.people{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.who{display:inline-flex;align-items:center;gap:7px;background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:700}
+.who .ini{width:20px;height:20px;border-radius:50%;border:1.5px solid;background:transparent;font-family:var(--fm);font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.who.celine{color:var(--p-celine)} .who.chevonne{color:var(--p-chevonne)} .who.ez{color:var(--p-ez)}
+.who .nm{color:var(--text)}
+.legend{font-family:var(--fm);font-size:10px;color:var(--muted);margin-top:11px;line-height:1.7}
+.ov-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.ov-stat{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:14px 12px;text-align:center}
+.ov-stat .n{font-family:var(--fm);font-size:26px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.ov-stat .l{font-size:9.5px;color:var(--muted);margin-top:7px;text-transform:uppercase;letter-spacing:.5px}
+@media(max-width:640px){.ov-stats{grid-template-columns:repeat(2,1fr)}}
+.pcard-name .own{font-size:11.5px}
+
+/* ===== PROJECT BLOCK ===== */
+.proj{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-top:16px}
+.proj-head{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.proj-badge{font-family:var(--fm);font-size:10px;font-weight:800;letter-spacing:1px;color:var(--accent);border:1px solid var(--border);border-radius:6px;padding:3px 8px;background:var(--s2)}
+.proj-name{font-family:var(--fh);font-size:17px;font-weight:700}
+.proj-status{margin-left:auto;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px;border:1px solid var(--border);color:var(--muted)}
+
+.block-label{font-family:var(--fm);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;margin:16px 0 8px}
+.update{border-left:3px solid var(--accent);background:var(--s2);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:11px 14px;font-size:13px;line-height:1.6}
+.update ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.update li{position:relative;padding-left:15px}
+.update li::before{content:'–';position:absolute;left:0;color:var(--accent)}
+
+/* task group label */
+.tgroup{font-family:var(--fm);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:var(--muted);margin:15px 0 4px;display:flex;align-items:center;gap:6px}
+.tgroup.today{color:var(--accent)}
+.tgroup.pend{color:var(--warn)}
+.tgroup.done{color:var(--ok)}
+.tgroup::before{content:'▸'}
+
+/* ===== TASK LIST ===== */
+.tasks{list-style:none;display:flex;flex-direction:column}
+.task{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.5;padding:11px 0;border-bottom:1px solid var(--border)}
+.task:last-child{padding-bottom:0;border-bottom:none}
+.task .tn{font-family:var(--fm);font-size:11px;font-weight:700;color:var(--dim);min-width:15px;padding-top:1px}
+.task .body{flex:1;min-width:0}
+.task .meta{margin-top:6px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.own{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:10px;font-weight:700;letter-spacing:.2px;white-space:nowrap}
+.own::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0}
+.own.celine{color:var(--p-celine)} .own.chevonne{color:var(--p-chevonne)} .own.ez{color:var(--p-ez)} .own.team{color:var(--muted)}
+.ttag{display:inline-block;font-family:var(--fm);font-size:8.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-radius:5px;padding:1px 6px;white-space:nowrap}
+.ttag.done{color:var(--ok);border:1px solid var(--ok)}
+.ttag.pend{color:var(--warn);border:1px solid var(--warn)}
+
+.subtasks{list-style:none;margin-top:6px;display:flex;flex-direction:column;gap:5px}
+.subtasks li{position:relative;padding-left:15px;font-size:11.5px;color:var(--muted)}
+.subtasks li::before{content:'◦';position:absolute;left:0;top:-1px;color:var(--dim);font-size:13px}
+
+/* dropdown + checklist */
+.dd{margin-top:8px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--s2)}
+.dd summary{cursor:pointer;list-style:none;padding:9px 13px;font-family:var(--fm);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:8px}
+.dd summary::-webkit-details-marker{display:none}
+.dd summary::before{content:'▸';color:var(--accent)}
+.dd[open] summary::before{content:'▾'}
+.dd summary .cnt{margin-left:auto;color:var(--dim);letter-spacing:.5px}
+.dd .ddbody{padding:2px 14px 12px}
+.chk{list-style:none;padding:0 14px 12px;display:flex;flex-direction:column}
+.chk li{padding:8px 0;border-bottom:1px solid var(--border)}
+.chk li:last-child{border-bottom:none}
+.chk label{display:flex;gap:10px;align-items:baseline;cursor:pointer;font-size:12px;flex-wrap:wrap}
+.chk input{accent-color:var(--accent);width:14px;height:14px;flex-shrink:0;position:relative;top:2px}
+.chk .rl{font-weight:600}
+.chk .dt{font-family:var(--fm);font-size:10px;color:var(--muted);margin-left:auto;white-space:nowrap}
+
+/* ===== PERSON CARDS (overview + others) ===== */
+.persons{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:6px}
+.pcard{background:var(--s2);border:1px solid var(--border);border-radius:var(--r-sm);padding:13px 15px}
+.pcard-name{display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding-bottom:9px;margin-bottom:10px;border-bottom:1px solid var(--border)}
+.pcard .tgroup{margin:10px 0 4px}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px}
+.pitem .lead{font-size:12.5px;line-height:1.5}
+.pitem .lead b{font-weight:700}
+.pnote{font-size:11px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px solid var(--border);line-height:1.6}
+
+.pagefoot{margin-top:26px;padding:15px 0 4px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:var(--fm);font-size:10px;letter-spacing:.4px;color:var(--muted)}
+.pagefoot .upd{margin-left:auto;color:var(--dim)}
+
+@media(max-width:640px){.persons{grid-template-columns:1fr}.topbar .crumb{display:none}.chk .dt{margin-left:0}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <a class="home" href="../index.html">⌂ Home</a>
+  <span class="crumb"><a href="../index.html">Command Base</a> › <a href="index.html">Morning Brief</a> › <b>2026-07-22</b></span>
+  <div class="modebar" id="modebar">
+    <button data-m="dark" class="on">◐ Dark</button>
+    <button data-m="light">○ Light</button>
+    <button data-m="warm">◑ Warm</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+  <!-- ========== HEADER ========== -->
+  <div class="brief-head">
+    <div class="eyebrow">Morning Brief</div>
+    <h1><span class="date">2026-07-22</span> · Morning Brief</h1>
+    <div class="wkmeta">Week of 20–24 July</div>
+    <div class="people">
+      <span class="who celine"><span class="ini">CL</span><span class="nm">Celine</span></span>
+      <span class="who ez"><span class="ini">EZ</span><span class="nm">Eng Zheng</span></span>
+      <span class="who chevonne"><span class="ini">CH</span><span class="nm">Chevonne</span></span>
+    </div>
+    <div class="legend">每个人一个代表色 —— task 旁边的颜色 = 谁负责。<b style="color:var(--accent)">▸ Today</b> = 今天做；<b>▸ This Week</b> = 这周内；<b style="color:var(--warn)">▸ Pending</b> / <b style="color:var(--ok)">▸ Done</b>。</div>
+  </div>
+
+  <!-- ========== TASK OVERVIEW (counts only) ========== -->
+  <div class="block-label" style="margin:20px 0 9px">Task Overview · Overall</div>
+  <div class="ov-stats">
+    <div class="ov-stat"><div class="n">29</div><div class="l">Total Tasks</div></div>
+    <div class="ov-stat"><div class="n" style="color:var(--p-celine)">22</div><div class="l">Celine</div></div>
+    <div class="ov-stat"><div class="n" style="color:var(--p-ez)">9</div><div class="l">Eng Zheng</div></div>
+    <div class="ov-stat"><div class="n" style="color:var(--p-chevonne)">7</div><div class="l">Chevonne</div></div>
+  </div>
+
+  <!-- ========== P1 · NAN 2026 ========== -->
+  <div class="proj">
+    <div class="proj-head"><span class="proj-badge">P1</span><span class="proj-name">NAN 2026</span><span class="proj-status">Post-Production</span></div>
+
+    <div class="block-label">Task Update</div>
+    <div class="update"><ul>
+      <li>Outsourced editor 已经在剪 Top Awardees 的 video。</li>
+      <li>Internal editor 也在剪 Short Highlight 的 video。</li>
+      <li>Top Awardees（outsourced）在等我们这边的 feedback。</li>
+      <li>Norman speech video + event highlight video 都在 editing process。</li>
+    </ul></div>
+
+    <div class="tgroup today">Today</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Reels 5 — we need to provide content by today</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Give feedback when video done</div><div class="meta"><span class="own team">All</span></div></div></li>
+    </ol>
+
+    <div class="tgroup">This Week</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Invoice sent to client</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Collect vendor payment</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+    </ol>
+
+    <details class="dd">
+      <summary>Editing Timeline · Reels 1–8 <span class="cnt">3 / 8 done</span></summary>
+      <ul class="chk">
+        <li><label><input type="checkbox" checked><span class="rl">Reels 01 · Norman × 曹格</span><span class="dt">Internal 14/7 · Client 16/7</span></label></li>
+        <li><label><input type="checkbox" checked><span class="rl">Reels 02 · 再創高峰（NPG兩大獎項）</span><span class="dt">Internal 16/7 · Client 18/7</span></label></li>
+        <li><label><input type="checkbox" checked><span class="rl">Reels 03 · 同行見證（VIP訪問）</span><span class="dt">Internal 15/7 · Client 17/7</span></label></li>
+        <li><label><input type="checkbox"><span class="rl">Reels 04 · 榮耀背後（Top Awardees）</span><span class="dt">Internal 19/7 · Client 21/7</span></label></li>
+        <li><label><input type="checkbox"><span class="rl">Reels 05 · 一路同行（不同年資員工）</span><span class="dt">Internal 17/7 · Client 20/7</span></label></li>
+        <li><label><input type="checkbox"><span class="rl">Reels 06 · Norman Stage Speech（freelance）</span><span class="dt">Internal 20/7 · Client 22/7</span></label></li>
+        <li><label><input type="checkbox"><span class="rl">Reels 07 · Short Event Highlight（freelance）</span><span class="dt">Internal 22/7 · Client 24/7</span></label></li>
+        <li><label><input type="checkbox"><span class="rl">Video 08 · Event Highlight</span><span class="dt">Internal 25/7 · Client 27/7</span></label></li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- ========== P2 · INNER CIRCLE ========== -->
+  <div class="proj">
+    <div class="proj-head"><span class="proj-badge">P2</span><span class="proj-name">Inner Circle</span><span class="proj-status">Prelaunch</span></div>
+
+    <div class="block-label">Task Update</div>
+    <div class="update">还在做 pre-launch video（editing batch 1 + 2）；今天所有 output 会跟 Rae + editor 一起 discuss。<br><span style="color:var(--muted)">Meeting session with social media team — Friday 7:00–9:00pm。</span></div>
+
+    <div class="tgroup today">Today</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Poster（recruitment + main promo）</div><div class="meta"><span class="own ez">Eng Zheng</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Promo video VO（配音）—— AI voice，还在找更好的声音；目前只做好 Jeff 那条</div><div class="meta"><span class="own ez">Eng Zheng</span></div></div></li>
+      <li class="task"><span class="tn">3</span><div class="body"><div class="txt">Batch 1 comment</div><div class="meta"><span class="own ez">Eng Zheng</span><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">4</span><div class="body"><div class="txt">Brief Batch 2 video</div><div class="meta"><span class="own ez">Eng Zheng</span><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">5</span><div class="body"><div class="txt">Set meeting with Leonard
+        <ul class="subtasks">
+          <li>Lark system + Google Drive usage</li>
+          <li>Discuss to open WhatsApp group</li>
+        </ul></div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+    </ol>
+
+    <div class="tgroup pend">Pending</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Research compilation
+        <ul class="subtasks"><li>To be collected from Rae</li></ul></div><div class="meta"><span class="own chevonne">Chevonne</span><span class="ttag pend">Pending</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Show proposal
+        <details class="dd"><summary>Details</summary>
+          <ul class="subtasks ddbody">
+            <li>Kaloz 要填 show program 的 context（based on main flow / art set）→ prepare for briefing 8月3号</li>
+            <li>Kaloz 要做 proposal brief for guest briefing —— before 8月15号</li>
+          </ul>
+        </details></div><div class="meta"><span class="ttag pend">Pending</span></div></div></li>
+    </ol>
+
+    <div class="tgroup done">Done</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Lark Base（set session to discuss）</div><div class="meta"><span class="own team">All</span><span class="ttag done">Done</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">21/7 meeting agenda</div><div class="meta"><span class="own team">All</span><span class="ttag done">Done</span></div></div></li>
+      <li class="task"><span class="tn">3</span><div class="body"><div class="txt">Prepare Jeff recruiting video file for Leonard</div><div class="meta"><span class="own celine">Celine</span><span class="ttag done">Done</span></div></div></li>
+    </ol>
+  </div>
+
+  <!-- ========== P3 · COFFEE PORTRAIT STORY ========== -->
+  <div class="proj">
+    <div class="proj-head"><span class="proj-badge">P3</span><span class="proj-name">Coffee Portrait Story</span><span class="proj-status">Post-Production</span></div>
+
+    <div class="block-label">Task Update</div>
+    <div class="update">已拍摄（21/7），现在进 post-production。</div>
+
+    <div class="tgroup today">Today</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Generate shooting video transcript
+        <ul class="subtasks"><li>Yijie 先 merge 那些 audio file → Chevonne 再 generate transcript</li></ul></div><div class="meta"><span class="own chevonne">Chevonne</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Editing arrangement</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+    </ol>
+
+    <div class="tgroup pend">Pending</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Budget</div><div class="meta"><span class="own celine">Celine</span><span class="ttag pend">Pending</span></div></div></li>
+    </ol>
+  </div>
+
+  <!-- ========== P4 · JYNNS × MARTELL ========== -->
+  <div class="proj">
+    <div class="proj-head"><span class="proj-badge">P4</span><span class="proj-name">Jynns × Martell</span><span class="proj-status">Pre-Production</span></div>
+
+    <div class="block-label">Task Update</div>
+    <div class="update">Creative proposal 今天 due。<br><span class="usub" style="font-family:var(--fm);font-size:11px;color:var(--muted)">Shooting 暫定 星期三（TBC from Rae）</span></div>
+
+    <div class="tgroup today">Today</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Shooting arrangement</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Editing timeline</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">3</span><div class="body"><div class="txt">Creative proposal <span style="color:var(--accent)">（due today）</span></div><div class="meta"><span class="own team">All</span></div></div></li>
+      <li class="task"><span class="tn">4</span><div class="body"><div class="txt">Quotation</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">5</span><div class="body"><div class="txt">Quotation for 8月3号 event</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+    </ol>
+  </div>
+
+  <!-- ========== P5 · ACP PIP EVENT ========== -->
+  <div class="proj">
+    <div class="proj-head"><span class="proj-badge">P5</span><span class="proj-name">ACP PIP Event</span><span class="proj-status">Pre-Production</span></div>
+
+    <div class="block-label">Task Update</div>
+    <div class="update">Working on crew arrangement + creative proposal。</div>
+
+    <div class="tgroup today">Today</div>
+    <ol class="tasks">
+      <li class="task"><span class="tn">1</span><div class="body"><div class="txt">Crew arrangement</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+      <li class="task"><span class="tn">2</span><div class="body"><div class="txt">Creative proposal</div><div class="meta"><span class="own celine">Celine</span></div></div></li>
+    </ol>
+  </div>
+
+  <!-- ========== OTHERS (person-first) ========== -->
+  <div class="proj">
+    <div class="proj-head"><span class="proj-badge">＋</span><span class="proj-name">Others</span></div>
+    <div class="block-label">By Person</div>
+    <div class="persons">
+
+      <div class="pcard">
+        <div class="pcard-name"><span class="own celine">Celine</span></div>
+        <div class="tgroup today">Today</div>
+        <ul class="plist">
+          <li class="pitem"><div class="lead"><b>Proton</b> — give feedback when video done</div></li>
+          <li class="pitem"><div class="lead"><b>Breakthrough Live</b> — 3rd preview to Jiawei</div></li>
+        </ul>
+        <div class="tgroup">This Week</div>
+        <ul class="plist">
+          <li class="pitem"><div class="lead"><b>Proton</b> — collect vendor payment</div></li>
+        </ul>
+        <div class="pnote"><b>Proton</b> · Post-Production — 16 reels（6 已 client preview，10 pending）· 跟 Chevonne 一起</div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-name"><span class="own ez">Eng Zheng</span></div>
+        <div class="tgroup">This Week</div>
+        <ul class="plist">
+          <li class="pitem"><div class="lead"><b>S&amp;P Santan MV — BTS</b></div>
+            <ul class="subtasks"><li>BTS video idea</li><li>Interview question</li><li>Production support</li></ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-name"><span class="own chevonne">Chevonne</span></div>
+        <div class="tgroup">This Week</div>
+        <ul class="plist">
+          <li class="pitem"><div class="lead"><b>S&amp;P Santan MV</b> — music breakdown</div></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Morning Brief · 2026-07-22 · Week 20–24 July</span>
+    <span class="upd">Kaloz Production</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var bar=document.getElementById('modebar');
+  function setMode(m){
+    document.body.classList.remove('mode-light','mode-warm');
+    if(m==='light')document.body.classList.add('mode-light');
+    if(m==='warm')document.body.classList.add('mode-warm');
+    bar.querySelectorAll('button').forEach(function(b){b.classList.toggle('on',b.dataset.m===m);});
+    try{localStorage.setItem('ipMode',m);}catch(e){}
+  }
+  bar.addEventListener('click',function(e){var b=e.target.closest('button');if(b)setMode(b.dataset.m);});
+  var saved='dark';try{saved=localStorage.getItem('ipMode')||'dark';}catch(e){}
+  setMode(saved);
+})();
+</script>
+</body>
+</html>
